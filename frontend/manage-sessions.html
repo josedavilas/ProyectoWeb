@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Define la codificacion de caracteres -->
+    <meta charset="UTF-8" />
+    <!-- Ajuste para diseño responsivo en dispositivos moviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrar Sesiones - Asesorias Universitarias</title>
+    <!-- Enlace a estilos personalizados -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Enlace a Bootstrap desde CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegacion principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">Asesorias Universitarias</a>
+        <!-- Boton para colapsar el menu en pantallas pequeñas -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Elementos del menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sessions.html">Sesiones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/notifications.html">Notificaciones</a>
+            </li>
+            <!-- Enlace visible solo para administradores -->
+            <li class="nav-item" id="admin-link" style="display: none;">
+              <a class="nav-link" href="admin-dashboard.html">Administracion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Encabezado de la pagina -->
+    <header class="bg-primary text-white text-center py-4">
+      <h1>Administrar Sesiones</h1>
+      <p>Crea y gestiona tus sesiones de asesoria</p>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container mt-4">
+      <!-- Formulario para crear nueva sesion -->
+      <section id="create-session" class="mb-5">
+        <h2>Crear Nueva Sesion</h2>
+        <form id="create-session-form" class="border p-4 rounded">
+          <div class="mb-3">
+            <label for="topic" class="form-label">Tema</label>
+            <input
+              type="text"
+              id="topic"
+              name="topic"
+              class="form-control"
+              placeholder="Ingresa el tema de la sesion"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Fecha</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="time" class="form-label">Hora</label>
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="form-control"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">
+            Crear Sesion
+          </button>
+        </form>
+      </section>
+
+      <!-- Lista de sesiones existentes -->
+      <section id="sessions-list">
+        <h2>Mis Sesiones</h2>
+        <div class="list-group">
+          <!-- Las sesiones se generaran dinamicamente aqui -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p>
+        &copy; 2025 Asesorias Universitarias. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <!-- Script para manejar sesiones -->
+    <script src="manage-sessions.js"></script>
+    <!-- Script para manejar la barra de navegacion -->
+    <script src="navbar.js"></script>
+  </body>
+</html>
